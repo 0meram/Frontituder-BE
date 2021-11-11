@@ -8,7 +8,7 @@ app.use(cors());
 app.use("/search", require("./routes/search"));
 
 app.get("/", (req, res) => {
-	res.send(`<h1>Moneytor Server!</h1>`);
+	res.send(`<h1>Moneytor Server</h1>`);
 });
 
 app.listen(port, () => {
