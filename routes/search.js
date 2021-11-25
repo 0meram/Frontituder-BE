@@ -1,67 +1,43 @@
 const express = require("express");
-const lngDetector = new (require("languagedetect"))();
+const axios = require("axios");
 const router = express.Router();
 
-router.post("/send", async (req, res) => {
+router.post("/getCity", async (req, res) => {
 	try {
-		const result = lngDetector.detect(req.body.wordToAdd);
-		res.send(result);
-	} catch (err) {
-		console.log(err);
-		res(err);
-	}
-});
-
-router.get("/getCity", async (req, res) => {
-    console.log('~ req', req.body);
-	try {
-			let res = "";
+			let result = "";
 			const base = `http://dataservice.accuweather.com/locations/v1/cities/search`;
-			const query = `?apikey=UIR2sXAbp5TQZRAuMOwP2o89JPkd9aHr&q=${city}`;
+			const query = `?apikey=UIR2sXAbp5TQZRAuMOwP2o89JPkd9aHr&q=${req.body.inputChange}`;
 			await axios.get(base + query).then((response) => {
 				if (response.data.length !== 0) {
-					return (res = response.data[0].Key);
+					return (result = response.data[0].Key);
 				} else {
-					return (res = "error");
+					return (result = "error");
 				}
 			});
-			res.send(res);
+			return res.send(result);
 	} catch (err) {
 		console.log(err);
-		res(err);
+		res.send(err);
 	}
 });
 
-
-// export const getCity = async (city) => {
-
-// 	let res = "";
-// 	const base = `http://dataservice.accuweather.com/locations/v1/cities/search`;
-// 	const query = `?apikey=UIR2sXAbp5TQZRAuMOwP2o89JPkd9aHr&q=${city}`;
-// 	await axios.get(base + query).then((response) => {
-// 		if (response.data.length !== 0) {
-// 			return (res = response.data[0].Key);
-// 		} else {
-// 			return (res = "error");
-// 		}
-// 	});
-// 	return res;
-// };
-
-// export const getForcast = async (id) => {
-// 	let res = "";
-// 	const base = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/`;
-// 	const query = `${id}?apikey=UIR2sXAbp5TQZRAuMOwP2o89JPkd9aHr`;
-// 	await axios.get(base + query).then((response) => {
-// 		res = response;
-// 		if (response.data.DailyForecasts.length !== 0) {
-// 			return (res = response.data.DailyForecasts);
-// 		} else {
-// 			return (res = "error");
-// 		}
-// 	});
-// 	return res;
-// };
-
+router.post("/getForecast", async (req, res) => {
+	try {
+			let result = "";
+			const base = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/`;
+			const query = `${req.body.cityId}?apikey=UIR2sXAbp5TQZRAuMOwP2o89JPkd9aHr`;
+			await axios.get(base + query).then((response) => {
+				if (response.data.DailyForecasts.length !== 0) {
+					return (result = response.data.DailyForecasts);
+				} else {
+					return (result = "error");
+				}
+		});
+		return res.send(result);
+	} catch (err) {
+		console.log(err);
+		res.send(err);
+	}
+});
 
 module.exports = router;

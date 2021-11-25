@@ -8,7 +8,7 @@ app.use(cors());
 app.use("/search", require("./routes/search"));
 
 app.get("/", (req, res) => {
-	res.send(`<h1>Frontitude Server hey man</h1>`);
+	res.send(`<h1>Frontitude Server</h1>`);
 });
 
 app.listen(port, () => {
