@@ -1,5 +1,5 @@
 {
-  "name": "moneytor-be",
+  "name": "frontitude",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -20,5 +20,19 @@
     "node-sass": "^6.0.1",
     "rebuild": "^0.1.2",
     "serverless-http": "^2.7.0"
-  }
+  },
+  "description": "\"# languageServer-BE\"",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0meram/languageServer-BE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0meram/languageServer-BE/issues"
+  },
+  "homepage": "https://github.com/0meram/languageServer-BE#readme"
 }

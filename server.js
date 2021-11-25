@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
+const port = 6000;
 const cors = require("cors");
 
 app.use(express.json());
