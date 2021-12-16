@@ -1,38 +1,41 @@
 {
-  "name": "frontitude",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "nodemon server.js",
-    "dev": "nodemon server.js"
-  },
-  "dependencies": {
-    "@nearform/sql": "^1.8.0",
-    "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "dotenv": "^10.0.0",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "languagedetect": "^2.0.0",
-    "netlify-lambda": "^2.0.15",
-    "node-flywaydb": "^3.0.7",
-    "node-sass": "^6.0.1",
-    "rebuild": "^0.1.2",
-    "serverless-http": "^2.7.0"
-  },
-  "description": "\"# languageServer-BE\"",
-  "main": "server.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/0meram/languageServer-BE.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/0meram/languageServer-BE/issues"
-  },
-  "homepage": "https://github.com/0meram/languageServer-BE#readme"
+	"name": "frontitude",
+	"version": "1.0.0",
+	"engines": {
+		"node": "12.11.1"
+	},
+	"private": true,
+	"scripts": {
+		"start": "nodemon server.js",
+		"dev": "nodemon server.js"
+	},
+	"dependencies": {
+		"@nearform/sql": "^1.8.0",
+		"cors": "^2.8.5",
+		"debug": "~2.6.9",
+		"dotenv": "^10.0.0",
+		"express": "~4.16.1",
+		"http-errors": "~1.6.3",
+		"jade": "~1.11.0",
+		"languagedetect": "^2.0.0",
+		"netlify-lambda": "^2.0.15",
+		"node-flywaydb": "^3.0.7",
+		"node-sass": "^6.0.1",
+		"rebuild": "^0.1.2",
+		"serverless-http": "^2.7.0"
+	},
+	"description": "\"# languageServer-BE\"",
+	"main": "server.js",
+	"devDependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/0meram/languageServer-BE.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/0meram/languageServer-BE/issues"
+	},
+	"homepage": "https://github.com/0meram/languageServer-BE#readme"
 }
