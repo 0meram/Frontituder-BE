@@ -1,6 +1,7 @@
 const express = require("express");
+require("dotenv").config();
 const app = express();
-const port = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 const cors = require("cors");
 
 app.use(express.json());
@@ -11,6 +12,9 @@ app.get("/", (req, res) => {
 	res.send(`<h1>Herolo Server</h1>`);
 });
 
-app.listen(process.env.PORT || 8000, () => {
-	console.log(`im ready to work on port ${port}`);
+app.listen(PORT, () => {
+	console.log(`im ready to work on port ${PORT}`);
 });
+
+
+console.log(process.env.PORT);
