@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 8000 || "https://herolo-be.herokuapp.com" ;
+const port = "https://herolo-be.herokuapp.com/"; ;
 const cors = require("cors");
 
 app.use(express.json());
