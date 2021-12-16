@@ -11,6 +11,6 @@ app.get("/", (req, res) => {
 	res.send(`<h1>Herolo Server</h1>`);
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 8000, () => {
 	console.log(`im ready to work on port ${port}`);
 });
